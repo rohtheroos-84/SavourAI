@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Recipe Magic</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="animated-text">✨ SavourAI ✨</h1>
+    <p class="tagline">"Snap It, Cook It, Love It!"</p>
+  </header>
+  <main class="main-container">
+    <section class="hero-section">
+      <h2>Your Fridge, Your Feast!</h2>
+      <p>Upload a photo of your ingredients or enter them manually:</p>
+    </section>
+    <section class="upload-section">
+      <form id="uploadForm" class="form-container">
+        <div class="input-group">
+          <label for="imageInput" class="upload-label">Upload Image:</label>
+          <input type="file" id="imageInput" accept="image/*" class="file-input">
+          <div id="imagePreviewContainer" class="image-preview-container hidden">
+            <img id="imagePreview" class="image-preview" src="" alt="Preview">
+            <button type="button" id="removeImage" class="remove-image-btn">×</button>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="ingredients" class="text-label">Or enter ingredients (comma-separated):</label>
+          <input type="text" id="ingredients" placeholder="e.g., tomato, onion, potato" class="text-input">
+        </div>
+        <div class="preferences-group">
+          <div class="preference-item">
+            <label for="mealType" class="text-label">Meal Type:</label>
+            <select id="mealType" class="select-input" required>
+              <option value="" disabled selected>Select meal type</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="snacks">Snacks</option>
+              <option value="dinner">Dinner</option>
+            </select>
+          </div>
+          <div class="preference-item">
+            <label for="servings" class="text-label">Number of Servings:</label>
+            <input type="number" id="servings" class="number-input" min="1" max="10" value="2" required>
+          </div>
+          <div class="preference-item">
+            <label for="dietaryType" class="text-label">Dietary Preference:</label>
+            <select id="dietaryType" class="select-input">
+              <option value="">Any</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="non-vegetarian">Non-vegetarian</option>
+              <option value="gluten-free">Gluten-free</option>
+              <option value="dairy-free">Dairy-free</option>
+            </select>
+          </div>
+          <div class="preference-item">
+            <label for="spiceLevel" class="text-label">Spice Level:</label>
+            <select id="spiceLevel" class="select-input">
+              <option value="mild">Mild</option>
+              <option value="medium" selected>Medium</option>
+              <option value="hot">Hot</option>
+              <option value="extra-hot">Extra Hot</option>
+            </select>
+          </div>
+          <div class="preference-item">
+            <label for="cookingTime" class="text-label">Cooking Time:</label>
+            <select id="cookingTime" class="select-input">
+              <option value="quick">Quick (< 30 mins)</option>
+              <option value="medium">Medium (30-60 mins)</option>
+              <option value="leisure">Leisure (> 60 mins)</option>
+            </select>
+          </div>
+          <div class="preference-item">
+            <label for="calories" class="text-label">Calories per Serving:</label>
+            <select id="calories" class="select-input">
+              <option value="">Any</option>
+              <option value="light">Light (< 300 kcal)</option>
+              <option value="medium">Medium (300-500 kcal)</option>
+              <option value="high">High (> 500 kcal)</option>
+            </select>
+          </div>
+          <div class="preference-item">
+            <label for="allergies" class="text-label">Allergies/Avoid:</label>
+            <input type="text" id="allergies" class="text-input" placeholder="e.g., nuts, shellfish">
+          </div>
+        </div>
+        <button type="submit" class="submit-btn">Find Recipes</button>
+      </form>
+      <div id="progressContainer" class="progress-container hidden">
+        <div class="progress-bar"></div>
+        <p>Processing your ingredients...</p>
+      </div>
+    </section>
+    <section class="results-section hidden" id="resultsSection">
+      <h2>Recipes Made for You:</h2>
+      <div class="recipe-container">
+        <button id="prevRecipe" class="nav-btn prev-btn">❮</button>
+        <div id="recipeList" class="recipe-flashcard"></div>
+        <button id="nextRecipe" class="nav-btn next-btn">❯</button>
+      </div>
+      <div class="recipe-dots" id="recipeDots"></div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>Made By:</p>
+    <ul>23BAI1164 C Bhuwan Rajaa</ul>
+    <ul>23BAI1467 Aayush P Menon</ul>
+    <ul>23BAI1463 Rohit N</ul>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
