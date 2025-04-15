@@ -17,7 +17,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Configure Gemini API
-genai.configure(api_key="AIzaSyCd1DKra7QgWnPeUh3sWi4m7XibJlc7eTg")
+genai.configure(api_key="YOUR API KEY")
 
 def resnet_inference(image):
     """
